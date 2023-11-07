@@ -31,28 +31,35 @@ namespace Technical_SkrylevaLiana320.Pages
 
         private void EnterBt_Click(object sender, RoutedEventArgs e)
         {
-            string login = LoginTb.Text.Trim();
-            int password = int.Parse(PasswordPb.Password.Trim());
-            currentUser = Connection.учебная.Employee.FirstOrDefault(x => x.fio == login && x.id == password);
-            if (currentUser.idRole == 1)
+            try
             {
-                MessageBox.Show("Добро пожаловать, " + currentUser.fio);
-                NavigationService.Navigate(new ListExamForTeacher());
+                string login = LoginTb.Text.Trim();
+                int password = int.Parse(PasswordPb.Password.Trim());
+                currentUser = Connection.учебная.Employee.FirstOrDefault(x => x.fio == login && x.id == password);
+                if (currentUser.idRole == 1)
+                {
+                    MessageBox.Show("Добро пожаловать, " + currentUser.fio);
+                    NavigationService.Navigate(new ListExamForTeacher());
 
+                }
+                else if (currentUser.idRole == 2)
+                {
+                    MessageBox.Show("Добро пожаловать, " + currentUser.fio);
+                    NavigationService.Navigate(new ListOfDepartmentPage());
+                }
+                else if (currentUser.idRole == 3)
+                {
+                    MessageBox.Show("Добро пожаловать, " + currentUser.fio);
+                    NavigationService.Navigate(new ListOfEmployeesPage());
+                }
+                else
+                {
+                    MessageBox.Show("Неверные данные");
+                }
             }
-            else if (currentUser.idRole == 2)
+            catch
             {
-                MessageBox.Show("Добро пожаловать, " + currentUser.fio);
-                NavigationService.Navigate(new ListOfDepartmentPage());
-            }
-            else if (currentUser.idRole == 3)
-            {
-                MessageBox.Show("Добро пожаловать, " + currentUser.fio);
-                NavigationService.Navigate(new ListOfEmployeesPage());
-            }
-            else
-            {
-                MessageBox.Show("Неверные данные");
+                MessageBox.Show("Ошибка");
             }
             
         }

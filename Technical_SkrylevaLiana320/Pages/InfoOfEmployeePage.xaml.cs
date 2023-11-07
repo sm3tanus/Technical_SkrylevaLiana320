@@ -60,5 +60,10 @@ namespace Technical_SkrylevaLiana320.Pages
         {
             ListOfEmployeesPage.currentEmployee.Role = EmpCb.SelectedItem as Role;
         }
+
+        private void DelBt_Click(object sender, RoutedEventArgs e)
+        {
+            Connection.учебная.Employee.Remove(ListOfEmployeesPage.currentEmployee);
+        }
     }
 }

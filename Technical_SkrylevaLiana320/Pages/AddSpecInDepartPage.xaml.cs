@@ -17,31 +17,26 @@ using Technical_SkrylevaLiana320.DBconnection;
 namespace Technical_SkrylevaLiana320.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AddDepartmentPage.xaml
+    /// Логика взаимодействия для AddSpecInDepartPage.xaml
     /// </summary>
-    public partial class AddDepartmentPage : Page
+    public partial class AddSpecInDepartPage : Page
     {
-        public Department dep = new Department();
-        public static List<Faculty> faculty { get; set; }
-        public AddDepartmentPage()
+        public Specialization spec = new Specialization();
+        public AddSpecInDepartPage()
         {
             InitializeComponent();
-            faculty = Connection.учебная.Faculty.ToList();
             this.DataContext = this;
         }
-
         private void AddBtn_Click(object sender, RoutedEventArgs e)
         {
-            dep.kname = NameTb.Text.Trim();
-            dep.code = CodeSpecTb.Text.Trim();
-            Connection.учебная.Department.Add(dep);
+            Department currentDepartment = ListOfDepartmentPage.currentDepartment;
+            spec.snumber = CodeSpecTb.Text;
+            spec.kafedra_code = currentDepartment.code;
+            spec.sname = NameSpecTb.Text;
+            spec.amount = int.Parse(AmountTb.Text);
+            Connection.учебная.Specialization.Add(spec);
             Connection.учебная.SaveChanges();
-            NavigationService.Navigate(new ListOfDepartmentPage());
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            dep.Faculty = EmpCb.SelectedItem as Faculty;
+            NavigationService.Navigate(new ListOfSpecializationPage());
         }
     }
 }

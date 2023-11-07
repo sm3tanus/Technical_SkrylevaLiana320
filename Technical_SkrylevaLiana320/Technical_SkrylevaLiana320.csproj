@@ -70,6 +70,9 @@
     <Compile Include="Pages\AddEmployeePage.xaml.cs">
       <DependentUpon>AddEmployeePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AddSpecInDepartPage.xaml.cs">
+      <DependentUpon>AddSpecInDepartPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddStudentPage.xaml.cs">
       <DependentUpon>AddStudentPage.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,9 @@
     </Compile>
     <Compile Include="Pages\ListOfEmployeesPage.xaml.cs">
       <DependentUpon>ListOfEmployeesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListOfSpecializationPage.xaml.cs">
+      <DependentUpon>ListOfSpecializationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AddDepartmentWindow.xaml.cs">
       <DependentUpon>AddDepartmentWindow.xaml</DependentUpon>
@@ -148,6 +154,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AddSpecInDepartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AddStudentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -173,6 +183,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\ListOfEmployeesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ListOfSpecializationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

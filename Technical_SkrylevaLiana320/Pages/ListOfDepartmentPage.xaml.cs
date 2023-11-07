@@ -21,6 +21,7 @@ namespace Technical_SkrylevaLiana320.Pages
     /// </summary>
     public partial class ListOfDepartmentPage : Page
     {
+        public static Department currentDepartment;
         public static List<Department> departments { get; set; }
         public static List<Faculty> faculties { get; set; }
         public ListOfDepartmentPage()
@@ -35,9 +36,16 @@ namespace Technical_SkrylevaLiana320.Pages
             NavigationService.Navigate(new AuthorizationPage());
         }
 
+
+        private void DepLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            currentDepartment = DepLv.SelectedItem as Department;
+            NavigationService.Navigate(new ListOfSpecializationPage());
+        }
+
         private void addBt_Click(object sender, RoutedEventArgs e)
         {
-            
+            NavigationService.Navigate(new AddDepartmentPage());
         }
     }
 }
