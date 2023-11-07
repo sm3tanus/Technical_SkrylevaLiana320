@@ -21,6 +21,7 @@ namespace Technical_SkrylevaLiana320.Pages
     /// </summary>
     public partial class ListOfSpecializationPage : Page
     {
+        public static Specialization currentSpec;
         public static List<Specialization> spec { get; set; }
         public ListOfSpecializationPage()
         {
@@ -38,6 +39,23 @@ namespace Technical_SkrylevaLiana320.Pages
         private void addBt_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddSpecInDepartPage());
+        }
+
+        private void delBt_Click(object sender, RoutedEventArgs e)
+        {
+            Connection.учебная.Department.Remove(ListOfDepartmentPage.currentDepartment);
+            Connection.учебная.SaveChanges();
+            NavigationService.Navigate(new ListOfSpecializationPage());
+        }
+
+        private void DepLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            currentSpec = DepLv.SelectedItem as Specialization;
+        }
+
+        private void editBt_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new EditSpecPage());
         }
     }
 }

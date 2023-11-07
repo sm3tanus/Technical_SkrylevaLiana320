@@ -68,14 +68,7 @@
                    Height="25"
                    Width="100"
                    Name="EditBt" Click="EditBt_Click">Изменить</Button>
-        <Button   Grid.Row="4"
-                   Grid.Column="4"
-                   FontSize="16"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Left"
-                   Height="25"
-                   Width="100"
-                   Name="DelBt" Click="DelBt_Click">Удалить</Button>
+        
         <ComboBox
          Grid.Row="3"
          Grid.Column="3"
@@ -90,5 +83,13 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        <Button   Grid.Row="4"
+    Grid.Column="4"
+    FontSize="16"
+    VerticalAlignment="Center"
+    HorizontalAlignment="Center"
+    Height="25"
+    Width="100"
+    Name="DelBt" Click="DelBt_Click">Удалить</Button>
     </Grid>
 </Page>

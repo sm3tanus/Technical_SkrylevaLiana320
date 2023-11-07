@@ -8,6 +8,6 @@ namespace Technical_SkrylevaLiana320.DBconnection
 {
     public class Connection
     {
-        public static учебная320лианаEntities4 учебная = new учебная320лианаEntities4(); 
+        public static учебная320лианаEntities5 учебная = new учебная320лианаEntities5(); 
     }
 }

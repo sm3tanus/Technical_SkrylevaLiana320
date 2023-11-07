@@ -41,9 +41,13 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="QRCoder, Version=1.4.3.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.4.3\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -64,6 +68,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DBconnection\ModelLiana.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLiana.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBconnection\ModelLiana.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLiana.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBconnection\ModelLiana.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLiana.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddDepartmentPage.xaml.cs">
       <DependentUpon>AddDepartmentPage.xaml</DependentUpon>
     </Compile>
@@ -75,6 +94,9 @@
     </Compile>
     <Compile Include="Pages\AddStudentPage.xaml.cs">
       <DependentUpon>AddStudentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditSpecPage.xaml.cs">
+      <DependentUpon>EditSpecPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\InfoOfEmployeePage.xaml.cs">
       <DependentUpon>InfoOfEmployeePage.xaml</DependentUpon>
@@ -98,19 +120,19 @@
     </Compile>
     <Compile Include="DBconnection\Connection.cs" />
     <Compile Include="DBconnection\Department.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelLiana.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Discipline.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelLiana.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Employee.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelLiana.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Exam.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelLiana.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Faculty.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelLiana.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -128,19 +150,19 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Request.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelLiana.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Role.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelLiana.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Specialization.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelLiana.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\Student.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelLiana.tt</DependentUpon>
     </Compile>
     <Compile Include="DBconnection\sysdiagrams.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
+      <DependentUpon>ModelLiana.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -163,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AuthorizationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EditSpecPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -239,6 +265,13 @@
     <None Include="DBconnection\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="DBconnection\ModelLiana.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelLiana.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBconnection\ModelLiana.edmx.diagram">
+      <DependentUpon>ModelLiana.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -264,6 +297,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBconnection\ModelLiana.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelLiana.edmx</DependentUpon>
+      <LastGenOutput>ModelLiana.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBconnection\ModelLiana.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelLiana.edmx</DependentUpon>
+      <LastGenOutput>ModelLiana.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

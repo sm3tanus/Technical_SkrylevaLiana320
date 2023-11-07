@@ -40,12 +40,26 @@
                    VerticalAlignment="Center"
                    FontSize="28">СПЕЦИАЛЬНОСТИ</TextBlock>
         <Button Grid.Row="1"
-                Grid.Column="3"
+                Grid.Column="2"
                 FontSize="20"
                 Width="100"
                 Height="30"
                 Content="+"
                 Name="addBt" Click="addBt_Click"/>
+        <Button Grid.Row="1"
+                Grid.Column="3"
+                FontSize="14"
+                Width="100"
+                Height="30"
+                Content="Удалить"
+                Name="delBt" Click="delBt_Click"/>
+        <Button Grid.Row="1"
+                Grid.Column="4"
+                FontSize="14"
+                Width="100"
+                Height="30"
+                Content="Изменить"
+                Name="EditBt" Click="editBt_Click"/>      
         <ListView 
                   Grid.ColumnSpan="5"
                   Grid.Row="2"
@@ -53,7 +67,7 @@
                   x:Name="DepLv"
                   Width="650"
                   Height="230"
-                  ItemsSource="{Binding spec}">
+                  ItemsSource="{Binding spec}" SelectionChanged="DepLv_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>

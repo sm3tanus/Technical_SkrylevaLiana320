@@ -53,6 +53,11 @@
                 Width="100"
                 Height="40"
                 Name="addStbt" Click="addStbt_Click">Добавить</Button>
+        <Button Grid.Column="4"
+          Grid.Row="5"
+         Width="100"
+         Height="40"
+         Name="DelStbt" Click="DelStbt_Click">Удалить</Button>
         <ListView Grid.Column="1"
                   Grid.ColumnSpan="3"
                   Grid.Row="2"

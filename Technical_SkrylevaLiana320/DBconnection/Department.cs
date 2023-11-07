@@ -25,6 +25,7 @@ namespace Technical_SkrylevaLiana320.DBconnection
         public string facult_abbr { get; set; }
     
         public virtual Faculty Faculty { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Specialization> Specialization { get; set; }
     }
 }

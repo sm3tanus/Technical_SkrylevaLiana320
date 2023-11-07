@@ -64,5 +64,20 @@
         VerticalAlignment="Center"
         HorizontalAlignment="Left" Click="EnterBt_Click"
         >Войти</Button>
+        <Button Grid.Row="3"
+        Width="100"
+        Height="20"
+        FontSize="12"
+        Name="QrBt" 
+        Grid.Column="1"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Right" Click="QrBt_Click" 
+        >QrCode</Button>
+        <Image x:Name="imageQr"
+               Grid.Row="2"
+               Grid.Column="1"
+                Width="150"
+                Height="100"
+               HorizontalAlignment="Right"></Image>
     </Grid>
 </Page>

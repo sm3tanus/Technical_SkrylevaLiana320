@@ -45,5 +45,6 @@ namespace Technical_SkrylevaLiana320.Pages
             currentEmployee = EmplLv.SelectedItem as Employee; 
             NavigationService.Navigate(new InfoOfEmployeePage());
         }
+        
     }
 }

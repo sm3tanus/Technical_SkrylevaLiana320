@@ -64,6 +64,8 @@ namespace Technical_SkrylevaLiana320.Pages
         private void DelBt_Click(object sender, RoutedEventArgs e)
         {
             Connection.учебная.Employee.Remove(ListOfEmployeesPage.currentEmployee);
+            Connection.учебная.SaveChanges();
+            NavigationService.Navigate(new ListOfEmployeesPage());
         }
     }
 }

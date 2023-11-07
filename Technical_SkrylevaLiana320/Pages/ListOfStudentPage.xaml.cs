@@ -23,6 +23,7 @@ namespace Technical_SkrylevaLiana320.Pages
     {
         public static List<Student> students { get; set; }
         public static List<Exam> exams { get; set; }
+        public Exam deleteExam;
         public ListOfStudentPage()
         {
             InitializeComponent();
@@ -40,13 +41,19 @@ namespace Technical_SkrylevaLiana320.Pages
 
         private void StudentLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Exam deleteStudent = StudentLv.SelectedItem as Exam;
-            
+            deleteExam = StudentLv.SelectedItem as Exam;  
         }
 
         private void addStbt_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddStudentPage());
+        }
+
+        private void DelStbt_Click(object sender, RoutedEventArgs e)
+        {
+            Connection.учебная.Exam.Remove(deleteExam);
+            Connection.учебная.SaveChanges();
+            NavigationService.Navigate(new ListOfStudentPage());
         }
     }
 }
