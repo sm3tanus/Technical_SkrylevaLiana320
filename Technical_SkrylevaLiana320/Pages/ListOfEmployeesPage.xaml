@@ -53,7 +53,7 @@
                   x:Name="EmplLv"
                   Width="470"
                   Height="230"
-                  ItemsSource="{Binding employee}" >
+                  ItemsSource="{Binding employee}" SelectionChanged="EmplLv_SelectionChanged" >
             <ListView.View>
                 <GridView>
                     <GridView.Columns>

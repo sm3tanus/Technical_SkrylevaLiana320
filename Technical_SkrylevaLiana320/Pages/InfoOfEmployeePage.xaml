@@ -1,4 +1,4 @@
-﻿<Page x:Class="Technical_SkrylevaLiana320.Pages.AddEmployeePage"
+﻿<Page x:Class="Technical_SkrylevaLiana320.Pages.InfoOfEmployeePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Technical_SkrylevaLiana320.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AddEmployeePage" Foreground="White">
+      Title="InfoOfEmployeePage" Foreground="white">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -36,32 +36,20 @@
         <TextBlock Grid.Row="3"
                    FontSize="16"
                    VerticalAlignment="Center">Зарплата</TextBlock>
-        <ComboBox
-         Grid.Row="3"
-         Grid.Column="4"
-         FontSize="16"
-         VerticalAlignment="Center"
-         Name="EmpCb"
-         ItemsSource="{Binding role}" SelectionChanged="ComboBox_SelectionChanged">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <TextBlock Text="{Binding name}"/>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
+        <TextBlock   Grid.Row="3"
+                   Grid.Column="4"
+                   FontSize="16"
+                   VerticalAlignment="Center"
+                   Name="RoleNameTb"></TextBlock>
         <TextBlock Grid.Row="2"
                    Grid.Column="3"
                    FontSize="16"
                    VerticalAlignment="Center">Шеф</TextBlock>
-        <TextBlock Grid.Row="3"
-                   Grid.Column="3"
-                   FontSize="16"
-                   VerticalAlignment="Center">Должность</TextBlock>
-        <TextBox   Grid.Row="2"
+        <CheckBox   Grid.Row="2"
                    Grid.Column="4"
                    FontSize="16"
                    VerticalAlignment="Center"
-                   Name="ChefTb"></TextBox>
+                   Name="ChefTb"></CheckBox>
         <TextBox   Grid.Row="2"
                    Grid.Column="1"
                    FontSize="16"
@@ -76,8 +64,31 @@
                    Grid.Column="3"
                    FontSize="16"
                    VerticalAlignment="Center"
-                  HorizontalAlignment="Left"
+                   HorizontalAlignment="Left"
                    Height="25"
-                   Width="100" Click="Button_Click">Добавить</Button>
+                   Width="100"
+                   Name="EditBt" Click="EditBt_Click">Изменить</Button>
+        <Button   Grid.Row="4"
+                   Grid.Column="4"
+                   FontSize="16"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Left"
+                   Height="25"
+                   Width="100"
+                   Name="DelBt">Удалить</Button>
+        <ComboBox
+         Grid.Row="3"
+         Grid.Column="3"
+         FontSize="12"
+         VerticalAlignment="Center"
+         Name="EmpCb"
+            Width="150"
+         ItemsSource="{Binding role}" SelectionChanged="ComboBox_SelectionChanged" HorizontalAlignment="Right" Margin="0,18,5,18">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
     </Grid>
 </Page>

@@ -35,6 +35,7 @@ namespace Technical_SkrylevaLiana320.Pages
         {
             employee.fio  = LastNameTb.Text.Trim();
             employee.salary = int.Parse(SalaryTb.Text.Trim());
+            employee.chef = int.Parse(ChefTb.Text.Trim());
             Connection.учебная.Employee.Add(employee);
             Connection.учебная.SaveChanges();
             NavigationService.Navigate(new ListOfEmployeesPage());
@@ -44,11 +45,6 @@ namespace Technical_SkrylevaLiana320.Pages
             NavigationService.Navigate(new AuthorizationPage());
         }
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            employee.Role = EmpCb.SelectedItem as Role;
-        }
-
-        private void ChefCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             employee.Role = EmpCb.SelectedItem as Role;
         }

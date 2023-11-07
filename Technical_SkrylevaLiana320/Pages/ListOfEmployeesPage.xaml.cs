@@ -21,6 +21,7 @@ namespace Technical_SkrylevaLiana320.Pages
     /// </summary>
     public partial class ListOfEmployeesPage : Page
     {
+        public static Employee currentEmployee;
         public static List<Employee> employee { get; set; }
         public ListOfEmployeesPage()
         {
@@ -37,6 +38,12 @@ namespace Technical_SkrylevaLiana320.Pages
         private void AddEmpBt_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AddEmployeePage());
+        }
+
+        private void EmplLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            currentEmployee = EmplLv.SelectedItem as Employee; 
+            NavigationService.Navigate(new InfoOfEmployeePage());
         }
     }
 }

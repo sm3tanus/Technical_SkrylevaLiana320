@@ -43,5 +43,10 @@ namespace Technical_SkrylevaLiana320.Pages
             Exam deleteStudent = StudentLv.SelectedItem as Exam;
             
         }
+
+        private void addStbt_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AddStudentPage());
+        }
     }
 }

@@ -1,0 +1,76 @@
+﻿<Page x:Class="Technical_SkrylevaLiana320.Pages.AddStudentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Technical_SkrylevaLiana320.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddStudentPage" Foreground="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" VerticalAlignment="Center">
+            <TextBlock 
+       Text="ЗАПИСЬ НА ЭКЗАМЕН"
+       HorizontalAlignment="Center"
+       VerticalAlignment="Center"
+       TextWrapping ="NoWrap"
+       FontSize="24"/>
+        </StackPanel>
+
+            <TextBlock Text="Студент:"
+                    VerticalAlignment="Center"
+                    FontSize="15"
+                    Grid.Column="0"
+                    Grid.Row="2"/>
+        <ComboBox Name="StudentsCb"
+                    Width="150"
+                    Height="30" 
+                    Grid.Column="1"
+                    Grid.Row="2"
+                    SelectionChanged="StudentsCb_SelectionChanged" 
+                    ItemsSource="{Binding students}"
+                    >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding fio}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock  Text="Оценка:"
+                    Width="150"
+                    Height="30" 
+                    Grid.Column="3"
+                    Grid.Row="2"
+                    FontSize="15"/>
+        <ComboBox x:Name="ScoreCb"
+                    Width="150"
+                    Height="30" 
+                    Grid.Column="4"
+                    Grid.Row="2"
+                    SelectionChanged="ScoreCb_SelectionChanged"/>
+        <Button x:Name="AddBtn"
+                    Height="30"
+                    Width="150"
+                    Content="Записать"
+                    Grid.Row="4"
+                    Grid.Column="2" Click="AddBtn_Click"/>
+    </Grid>
+</Page>

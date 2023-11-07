@@ -48,6 +48,11 @@
                    VerticalAlignment="Center"
                    FontSize="18"
                    Name="dateDiscTb"></TextBlock>
+        <Button Grid.Column="4"
+                 Grid.Row="6"
+                Width="100"
+                Height="40"
+                Name="addStbt" Click="addStbt_Click">Добавить</Button>
         <ListView Grid.Column="1"
                   Grid.ColumnSpan="3"
                   Grid.Row="2"
@@ -56,6 +61,7 @@
                   Width="370"
                   Height="230"
                   ItemsSource="{Binding exams}" SelectionChanged="StudentLv_SelectionChanged">
+         
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
