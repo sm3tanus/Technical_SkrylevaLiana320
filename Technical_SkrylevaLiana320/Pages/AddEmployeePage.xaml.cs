@@ -50,7 +50,7 @@ namespace Technical_SkrylevaLiana320.Pages
 
         private void ChefCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            employee.Role = EmpCb.SelectedItem as Role;
         }
     }
 }
