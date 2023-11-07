@@ -48,10 +48,11 @@ namespace Technical_SkrylevaLiana320.Pages
             else if (currentUser.idRole == 3)
             {
                 MessageBox.Show("Добро пожаловать, " + currentUser.fio);
+                NavigationService.Navigate(new ListOfEmployeesPage());
             }
             else
             {
-                
+                MessageBox.Show("Неверные данные");
             }
             
         }
