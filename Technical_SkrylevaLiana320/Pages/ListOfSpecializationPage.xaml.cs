@@ -43,8 +43,7 @@ namespace Technical_SkrylevaLiana320.Pages
 
         private void delBt_Click(object sender, RoutedEventArgs e)
         {
-            Connection.учебная.Department.Remove(ListOfDepartmentPage.currentDepartment);
-            Connection.учебная.SaveChanges();
+            AllFunctions.DeleteDepartment(ListOfDepartmentPage.currentDepartment);
             NavigationService.Navigate(new ListOfSpecializationPage());
         }
 

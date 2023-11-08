@@ -36,8 +36,7 @@ namespace Technical_SkrylevaLiana320.Pages
             employee.fio  = LastNameTb.Text.Trim();
             employee.salary = int.Parse(SalaryTb.Text.Trim());
             employee.chef = int.Parse(ChefTb.Text.Trim());
-            Connection.учебная.Employee.Add(employee);
-            Connection.учебная.SaveChanges();
+            AllFunctions.AddEmployee(employee);
             NavigationService.Navigate(new ListOfEmployeesPage());
         }
         private void GoBackbt_Click(object sender, RoutedEventArgs e)

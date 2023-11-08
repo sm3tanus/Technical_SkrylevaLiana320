@@ -34,8 +34,7 @@ namespace Technical_SkrylevaLiana320.Pages
         {
             dep.kname = NameTb.Text.Trim();
             dep.code = CodeSpecTb.Text.Trim();
-            Connection.учебная.Department.Add(dep);
-            Connection.учебная.SaveChanges();
+            AllFunctions.AddDepartment(dep);
             NavigationService.Navigate(new ListOfDepartmentPage());
         }
 

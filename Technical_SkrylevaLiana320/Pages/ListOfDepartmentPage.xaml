@@ -45,13 +45,6 @@
                 Height="30"
                 Content="+"
                 Name="addBt" Click="addBt_Click" />
-        <Button Grid.Row="1"
-        Grid.Column="4"
-        FontSize="14"
-        Width="100"
-        Height="30"
-        Content="Удалить"
-        Name="delBt"/>
         <ListView 
                   Grid.ColumnSpan="5"
                   Grid.Row="2"

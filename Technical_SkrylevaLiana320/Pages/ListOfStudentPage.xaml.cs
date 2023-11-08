@@ -51,8 +51,7 @@ namespace Technical_SkrylevaLiana320.Pages
 
         private void DelStbt_Click(object sender, RoutedEventArgs e)
         {
-            Connection.учебная.Exam.Remove(deleteExam);
-            Connection.учебная.SaveChanges();
+            AllFunctions.DeleteExam(deleteExam);
             NavigationService.Navigate(new ListOfStudentPage());
         }
     }

@@ -34,8 +34,7 @@ namespace Technical_SkrylevaLiana320.Pages
             spec.kafedra_code = currentDepartment.code;
             spec.sname = NameSpecTb.Text;
             spec.amount = int.Parse(AmountTb.Text);
-            Connection.учебная.Specialization.Add(spec);
-            Connection.учебная.SaveChanges();
+            AllFunctions.AddSpecInDepartment(spec);
             NavigationService.Navigate(new ListOfSpecializationPage());
         }
     }

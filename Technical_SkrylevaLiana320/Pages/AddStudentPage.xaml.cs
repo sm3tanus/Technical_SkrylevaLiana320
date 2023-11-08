@@ -38,8 +38,7 @@ namespace Technical_SkrylevaLiana320.Pages
             exam.cabinet = ListExamForTeacher.currentExam.cabinet;
             exam.date = ListExamForTeacher.currentExam.date;
             exam.Discipline = ListExamForTeacher.currentExam.Discipline;
-            Connection.учебная.Exam.Add(exam);
-            Connection.учебная.SaveChanges();
+            AllFunctions.AddStudentInExam(exam);
             NavigationService.Navigate(new ListOfStudentPage());
         }
         private void StudentsCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
